@@ -19,16 +19,18 @@
 
 // Package petname is a library for generating human-readable, random
 // names for objects (e.g. hostnames, containers, blobs).
-package petname
+package pet_test
 
 import (
 	"testing"
+
+	"github.com/echlebek/pet"
 )
 
 // Make sure the generated names exist
 func TestPetName(t *testing.T) {
-	for i:=0; i<10; i++ {
-		name := Generate(i, "-")
+	for i := 0; i < 10; i++ {
+		name := pet.Generate(i, "-")
 		if name == "" {
 			t.Fatalf("Did not generate a %d-word name, '%s'", i, name)
 		}
